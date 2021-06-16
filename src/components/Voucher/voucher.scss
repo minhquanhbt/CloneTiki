@@ -1,0 +1,22 @@
+.big__ship{
+    padding: 0 15px;
+}
+.shipper{
+    padding: 0 15px;
+}
+.ship{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 15px;
+}
+.ship a{
+    width: 295px;
+    height: 150px;
+    background-color: rgb(232, 232, 232);
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 10px;
+}

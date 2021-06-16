@@ -1,0 +1,60 @@
+
+ .list__product{
+    
+      /* Style the buttons that are used to open the tab content */
+       button {
+        border: none;
+        outline: none;
+        margin: 0 50px;
+        background-color: white;
+      }
+     
+       .cen{
+          padding: 5px 15px;
+      }
+      /* Change background color of buttons on hover */
+       button.active img{
+        filter: brightness(1);
+        transition: 0.5s;
+      }
+       button.active{
+        border-bottom: 4px solid rgb(255, 66, 78);
+      }
+       .items{
+        display: flex;
+        padding: 20px 30px;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+      }
+     .london__chil p{
+        font-size: 13px;
+        font-weight: 400;
+        margin: 0px 0px 4px;
+        line-height: 20px;
+      }
+     .price{
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        margin-top: 4px;
+    
+      }
+       .price__discout{
+        font-size: 15px;
+        line-height: 24px;
+        font-weight: 500;
+        margin: 0px 8px 0px 0px;
+        margin-right: 5px;
+    
+      }
+     .price__discout2{
+        font-size: 13px;
+        line-height: 20px;
+        border-radius: 2px;
+        background: rgb(255, 66, 78);
+        color: white;
+        padding: 0px 2px;
+      }
+
+ }
+ 

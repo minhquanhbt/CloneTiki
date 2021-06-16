@@ -1,0 +1,93 @@
+/* today */
+.toDay .chil{
+    outline: none;
+    width: 248px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 16px;
+}
+.toDay .today img{
+    height: 28px;
+}
+.toDay .today{
+    padding: 0 15px;
+}
+.toDay .item .chil .img{
+    width: 192px;
+}
+.toDay .img .img__chil{
+    padding-top: 100%;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+}
+.toDay .img img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    object-fit: contain;
+}
+.toDay .img .discout{
+    background-color: rgb(255, 66, 78);
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 500;
+    position: absolute;
+    z-index: 3;
+    top: 0px;
+    left: 0px;
+    border-radius: 4px 0px 26px;
+    padding: 2px 8px 4px 2px;
+}
+.toDay .price{
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
+    font-weight: 500;
+    color: rgb(36, 36, 36);
+    margin: 12px 0px 8px;
+}
+.toDay .pty{
+    background-color: rgb(255, 170, 175);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 20px;
+}
+.toDay .des{
+    width: 0%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: rgb(255, 66, 78);
+    height: 20px;
+    border-radius: 10px;
+    min-width: 20px
+}
+.toDay span{
+    font-size: 11px;
+    line-height: 16px;
+    padding: 0px 0px 0px 6px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+}
+.sale{
+    background: #F4F4F4;
+}

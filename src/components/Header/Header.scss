@@ -1,0 +1,233 @@
+.header {
+  background: rgb(1, 127, 255);
+  z-index: 999;
+  letter-spacing: normal;
+  padding: 20px 15px;
+  margin-right: auto;
+  margin-left: auto;
+  .logo__center {
+    margin: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .icon__dow {
+    color: white;
+    font-size: 15px;
+    margin-left: 6px;
+  }
+  .humbeger {
+    display: flex;
+    align-items: center;
+  }
+  .logo {
+    width: 60px;
+    height: 40px;
+    img {
+      width: 100%;
+    }
+  }
+  .img__hum {
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+    img {
+      width: 100%;
+    }
+  }
+  .text {
+    span {
+      color: white;
+    }
+    .dm {
+      font-size: 11px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.45;
+    }
+    .sp {
+      font-size: 13px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.54;
+    }
+    .icon__dow {
+      width: 16px;
+      height: 16px;
+      color: white;
+    }
+  }
+  .search {
+    color: white;
+    .search__top {
+      width: 100%;
+      display: flex;
+      position: relative;
+      box-shadow: #777 0px 1px 2px 0px;
+    }
+    input {
+      border: 0px;
+      padding: 0px 12px;
+      font-size: 13px;
+      border-radius: 2px 0px 0px 2px;
+      flex: 1 1 0%;
+      outline: none;
+      font-family: inherit;
+      line-height: 1.15;
+      margin: 0px;
+    }
+    .sea {
+      cursor: pointer;
+      border: 0px;
+      width: 120px;
+      background: rgb(13, 92, 182);
+      height: 40px;
+      border-radius: 0px 2px 2px 0px;
+      color: white;
+      font-size: 13px;
+      font-weight: 500;
+      outline: none;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      img {
+        width: 20px;
+        height: 20px;
+        margin: 0px 8px 0px 0px;
+      }
+    }
+  }
+  .search__bot {
+    ul {
+      display: flex;
+      margin-top: 10px;
+      margin-bottom: 0;
+      li {
+        padding: 0 5px;
+      }
+    }
+  }
+  .dkdn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    .dkdn__item {
+      display: flex;
+      align-items: center;
+
+     
+    }
+    .user {
+      max-width: 104px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-weight: 500;
+    }
+    img {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+      border-radius: 2px;
+    }
+    a {
+      color: white;
+    }
+    .dkdn__itemm a {
+      margin-top: 10px;
+    }
+  }
+  .smail {
+    font-size: 11px;
+  }
+  .dkdn__item {
+    position: relative;
+  }
+  .hover__drop {
+    border: 1px solid rgb(239, 239, 239);
+    background: rgb(255, 255, 255);
+    z-index: 15;
+    margin: 0px;
+    padding: 10px 0px;
+    border-radius: 0px 0px 3px 3px;
+    left: calc(-50%);
+    transform: translateX(-50%);
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    transform: translateY(20%);
+    
+    ul  li span {
+      color: rgb(74, 74, 74);
+      background: rgb(253, 216, 53);
+      display: inline-block;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      touch-action: manipulation;
+      cursor: pointer;
+      border: 0px;
+      white-space: nowrap;
+      padding: 0px;
+      font-size: 14px;
+      border-radius: 4px;
+      margin: 5px 12px;
+      width: 236px;
+      height: 41px;
+      line-height: 41px;
+      outline: none;
+    }
+    .fb {
+      background: rgb(59, 89, 152);
+      color: white;
+    }
+    .gg {
+      background: rgb(223, 74, 50);
+      color: white;
+    }
+    .zalo {
+      background: rgb(15, 142, 221);
+      color: white;
+    }
+  }
+  .dkdn__item:hover .hover__drop {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.3s;
+  }
+  .humbeger{
+  position: relative;
+
+  }
+  .humbeger__hover{
+    z-index: 1000;
+    position: absolute;
+    top:100%;
+    display: none;
+    border: 1px solid rgb(239, 239, 239);
+    background: rgb(255, 255, 255);
+    z-index: 15;
+    
+    padding: 10px 30px;
+    border-radius: 0px 0px 3px 3px;
+    width: 236px;
+    height: auto;
+    left:-50%;
+    li{
+      padding: 10px 0;
+      a{
+        color: #777;
+        font-size: 1.2rem;
+        
+      }
+    }
+  }
+  .humbeger:hover .humbeger__hover{
+    display: block;
+  }
+}

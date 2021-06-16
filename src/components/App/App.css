@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+a{
+    text-decoration: none;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+a:hover{
+    text-decoration: none;
+}
+ul,li{
+    list-style: none;
+}
+.home .owl-carousel{
+ display: block;
+}
