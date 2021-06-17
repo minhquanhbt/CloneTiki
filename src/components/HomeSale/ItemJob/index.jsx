@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { FaFolderMinus } from 'react-icons/fa';
+import { ProgressBar } from 'react-bootstrap';
 import './ItemJob.scss';
 
-function ItemJob({img, discout, price,status}) {
-    // const history = useHistory();
-    // const handlerViewDetail = (id)=>{
-    //   history.push(`/detail/${id}`);
-    // }
-    return (
-      <div className="item">
+function ItemJob({ img, discout, price, status,now }) {
+  // const history = useHistory();
+  // const handlerViewDetail = (id)=>{
+  //   history.push(`/detail/${id}`);
+  // }
+  return (
+    <div className="item">
       <div className="chil">
         <div className="img">
           <div className="img__chil">
@@ -20,12 +21,11 @@ function ItemJob({img, discout, price,status}) {
         </div>
         <div className="price">{price}</div>
         <div className="pty">
-          <div className="des" />
-          <span>{status}</span>
+          <ProgressBar animated now={now} label ={now}  />
         </div>
       </div>
     </div>
-    )
+  );
 }
 
-export default ItemJob
+export default ItemJob;
