@@ -20,19 +20,10 @@
     font-size: 15px;
   }
 }
-.modaldk{
-  .inputdn {
-    z-index: 1;
-    position: relative;
-  }
-  .inputdn::before {
-    content: '';
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    border-bottom: 1px solid rgb(224, 224, 224);
-  }
+
+.inputdn {
+  z-index: 1;
+  position: relative;
   input {
     width: 100%;
     padding: 10px 0px;
@@ -42,7 +33,15 @@
     outline: none;
   }
 }
-
+.inputdn::before {
+  content: '';
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border-bottom: 1px solid rgb(224, 224, 224);
+ 
+}
 .lg__item button {
     margin: 16px 0px 10px;
   outline: none;

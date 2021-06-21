@@ -121,16 +121,20 @@ export const Company = [
     },
 ]
 
-export const skills = {
-    0:"C++",
-    1:"HTML",
-    2:"CSS",
-    3:"ReactJs",
-    4:"NodeJs",
-    5:"PHP",
-    6:"Golang",
-    7:"C#",
-    8:"Java",
-    9:"Arhitech",
-    10:"Ruby"
-}
+export const Product = [
+    {
+        id: '1',
+        img : 'https://salt.tikicdn.com/cache/w444/ts/product/4e/7a/76/77c7a7c70546ab523df53b5283eb2ca9.jpg',
+        price:'198.000 d',
+        priceCu:'210.000 d',
+        sale:'30%'
+    },
+    {
+        id: '2',
+        img : 'https://salt.tikicdn.com/cache/w444/ts/product/ea/22/4f/4197a560252cf0f30e8cd2aacb07fcc5.jpg',
+        price:'656.5555d',
+        priceCu:'567655 d',
+        sale:'205%'
+    },
+]
+    

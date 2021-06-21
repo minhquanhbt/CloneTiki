@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from "react-toastify";
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector} from 'react-redux';
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,8 +18,8 @@ import Footer from '../Footer';
 // import Admin from '../../container/Admin';
 // import AuthRoute from '../../hoc/AuthRoute/AuthRoute';
 import Home from '../../container/Home';
-// import UpLoadJob from '../../container/UpLoadJob';
-// import Recruitment from '../../container/Recruitment';
+import ProductInfor from '../../container/ProductInfo';
+import Cart from '../../container/Cart';
 // import { getProfileUser } from '../../state/actions';
 // import DetailsJob from '../../container/DetailsJob';
 // import EditJob from '../../container/EditJob';
@@ -44,6 +44,7 @@ function App() {
   //     dispatch(getProfileUser());
   //   }
   // }, [dispatch])
+  const infoUser = useSelector(state => state.infoUser.user);
   
   return (
     <React.Fragment>
@@ -53,9 +54,11 @@ function App() {
         <div className="content">
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/ProductInfor/:id" exact component={ProductInfor} />
+            <Route path="/Cart" exact component={Cart} />
             {/* <Route path="/editjob/:id" exact component={EditJob} />
-            <Route path="/managercv" exact component={ManagerCV} />
-            <Route path="/searchcandidate" exact component={SearchCandidate} />
+           
+           
             <Route path="/detail/:id" exact component={DetailsJob} />
             <Route path="/priceList" exact component={PriceList} />
             <Route  path="/checkout/:id" exact component={Checkout} />

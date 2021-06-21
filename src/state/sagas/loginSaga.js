@@ -10,13 +10,9 @@ function* userLogin(action) {
   // const {userName,password} = action.payload;
   console.log(action.payload,'action.payload;');
   try {
-    const res = yield call(UserService.login, action.payload);
-    const token = yield res.token;
-    console.log(token)
-    // yield put(userLoginSuccess(token));
-    // const infoUser = yield call(UserService.getProfile);
-    // yield put(getProfileUserSuccess(infoUser));
-    // yield toastSuccess('Đăng nhập thành công');
+    yield put(userLoginSuccess(action.payload.accessToken));
+    yield put(getProfileUserSuccess(action.payload));
+    yield toastSuccess('Đăng nhập thành công');
   } catch (error) {
     console.log('Đăng nhập thất bại');
   }

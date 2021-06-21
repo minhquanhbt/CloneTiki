@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Header.scss';
-
+import { Link, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import ModalDK from '../ModalDK';
 import ModalDN from '../ModalDN';
+import { userLogoutPage } from '../../state/actions';
+import FacebookLogin from 'react-facebook-login';
+import { userLogin } from '../../state/actions';
 function Header() {
+  const dispatch = useDispatch();
+  const infoUser = useSelector(state => state.infoUser.user);
+  const history = useHistory();
   const [modalShow, setModalShow] = React.useState(false);
   const [modalShow1, setModalShow1] = React.useState(false);
+  const responseFacebook = response => {
+    dispatch(userLogin(response));
+  };
+  const componentClicked = data => {
+    console.log(data);
+  };
+  const handlerLogout = () => {
+    dispatch(userLogoutPage())
+    history.push('/');
+  }
   return (
     <div className="header">
       <div className="header__center">
@@ -13,12 +30,12 @@ function Header() {
           <div className="col-lg-3">
             <div className="header__item">
               <div className="logo__center">
-                <div className="logo">
+                <Link to="/" className="logo">
                   <img
                     src="https://salt.tikicdn.com/ts/upload/ae/f5/15/2228f38cf84d1b8451bb49e2c4537081.png"
                     alt="aa"
                   />
-                </div>
+                </Link>
                 <a href="a" className="humbeger">
                   <div className="img__hum">
                     <img
@@ -103,82 +120,114 @@ function Header() {
           <div className="col-lg-3">
             <div className="header__item">
               <div className="dkdn">
-                <div className="dkdn__item">
-                  <img
-                    className="avt"
-                    src="https://salt.tikicdn.com/ts/upload/67/de/1e/90e54b0a7a59948dd910ba50954c702e.png"
-                    alt="as"
-                  />
-                  <div className="dkdn__text">
-                    <div className="dkdn__top">
-                      <span>
-                        Đăng nhập/đăng ký
-                        <div className="hover__drop">
-                          <ul className="list_dn">
-                            <li>
-                              <span
-                                className="dangnhap"
-                                variant="primary"
-                                onClick={() => setModalShow(true)}
-                              >
-                                Đăng Nhập
-                              </span>
-
-                              <ModalDN
-                                show={modalShow}
-                                onHide={() => setModalShow(false)}
-                              />
-                            </li>
-                            <li>
-                              <span
-                                className="dangnhap"
-                                variant="primary"
-                                onClick={() => setModalShow1(true)}
-                              >
-                                Tạo tài khoản
-                              </span>
-
-                              <ModalDK
-                                show={modalShow1}
-                                onHide={() => setModalShow1(false)}
-                              />
-                            </li>
-                            <li>
-                              <span className="dangnhap fb">
-                                Đăng nhập bằng Facebook
-                              </span>
-                            </li>
-                            <li>
-                              <span className="dangnhap gg">
-                                Đăng nhập bằng Google
-                              </span>
-                            </li>
-                            <li>
-                              <span className="dangnhap zalo">
-                                Đăng nhập bằng Zalo
-                              </span>
-                            </li>
-                          </ul>
-                        </div>
-                      </span>
+                {infoUser ? (
+                  <div className="dkdn__item">
+                    <img
+                      className="avt"
+                      src={infoUser.picture.data.url}
+                      alt="as"
+                    />
+                    <div className="dkdn__text">
+                      <div className="dkdn__top">
+                        <span>
+                          Tài khoản
+                          <div className="hover__drop">
+                            <ul className="list_dn">
+                              <li>
+                                <span className="dangnhap">profile</span>
+                              </li>
+                              <li>
+                                <span className="dangnhap" onClick={handlerLogout} >Dang xuat</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </span>
+                      </div>
+                      <span className="user">{infoUser.name}</span>
                     </div>
-                    <span className="user">Tài khoản</span>
                   </div>
-                </div>
-                <a href="a" className="dkdn__itemm">
+                ) : (
+                  <div className="dkdn__item">
+                    <img
+                      className="avt"
+                      src="https://salt.tikicdn.com/ts/upload/67/de/1e/90e54b0a7a59948dd910ba50954c702e.png"
+                      alt="as"
+                    />
+                    <div className="dkdn__text">
+                      <div className="dkdn__top">
+                        <span>
+                          Đăng nhập/đăng ký
+                          <div className="hover__drop">
+                            <ul className="list_dn">
+                              <li>
+                                <span
+                                  className="dangnhap"
+                                  variant="primary"
+                                  onClick={() => setModalShow(true)}
+                                >
+                                  Đăng Nhập
+                                </span>
+
+                                <ModalDN
+                                  show={modalShow}
+                                  onHide={() => setModalShow(false)}
+                                />
+                              </li>
+                              <li>
+                                <span
+                                  className="dangnhap"
+                                  variant="primary"
+                                  onClick={() => setModalShow1(true)}
+                                >
+                                  Tạo tài khoản
+                                </span>
+
+                                <ModalDK
+                                  show={modalShow1}
+                                  onHide={() => setModalShow1(false)}
+                                />
+                              </li>
+                              <li>
+                                <FacebookLogin
+                                  appId="993067854767767"
+                                  autoLoad={true}
+                                  fields="name,email,picture"
+                                  onClick={componentClicked}
+                                  callback={responseFacebook}
+                                />
+                              </li>
+                              <li>
+                                <span className="dangnhap gg">
+                                  Đăng nhập bằng Google
+                                </span>
+                              </li>
+                              <li>
+                                <span className="dangnhap zalo">
+                                  Đăng nhập bằng Zalo
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
+                        </span>
+                      </div>
+                      <span className="user">Tài khoản</span>
+                    </div>
+                  </div>
+                  
+                )}
+                 <Link to ="/Cart" className="dkdn__itemm">
                   <div className="giohang">
                     <img
                       className="cart"
                       src="https://salt.tikicdn.com/ts/upload/40/44/6c/b80ad73e5e84aeb71c08e5d8d438eaa1.png"
                       alt="as"
                     />
-
                     <span>giỏ hàng</span>
                   </div>
                   <a className="smail" href="a">
                     💰Bán hàng cùng Tiki
                   </a>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
